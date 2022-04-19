@@ -6,6 +6,12 @@
 // https://man7.org/linux/man-pages/man2/lstat.2.html
 // https://linuxhint.com/stat-system-call-linux/
 int main( int argc, char *argv[] )  {
+
+  if (argc < 2){
+    printf("\nPlease provide file/directory path:\n./filename.exe </path/to/file_or_directory>\n\n");
+    return 0;
+  }
+
   struct stat info;
   stat(argv[1], &info);
 
